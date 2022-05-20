@@ -23,7 +23,7 @@ struct FlickrRoute: Routable {
     
     var headers: [String: String] {
         var headers = ["ContentType": "application/json"]
-        headers.merge(authentication.header) { (current, _) in current }
+        headers.merge(authentication.header) { current, _ in current }
         return headers
     }
     

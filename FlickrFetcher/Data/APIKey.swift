@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct APIKey {
+enum APIKey {
     static let flickr = "5bac1e23c74f5497e4dff908fa711593"
 }

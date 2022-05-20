@@ -14,6 +14,6 @@ extension UIStoryboard {
     }
     
     func instantiate<T: UIViewController>(viewController: T.Type) -> T {
-        instantiateViewController(withIdentifier: String(describing: T.self)) as! T
+        instantiateViewController(withIdentifier: String(describing: T.self)) as? T ?? T()
     }
 }

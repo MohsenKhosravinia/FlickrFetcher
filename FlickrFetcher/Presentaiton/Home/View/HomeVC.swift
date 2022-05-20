@@ -83,18 +83,21 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         data?.items?.count ?? .zero
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: ImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! ImageCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeue(ImageCell.self, indexPath: indexPath)
         cell.fill(photo: data?.items?[indexPath.item] ?? .init())
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! ImageCell
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCell else { return }
         cell.flip()
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
         if let items = data?.items,
            indexPath.row == items.count - 1,
            let pages = data?.pages,
