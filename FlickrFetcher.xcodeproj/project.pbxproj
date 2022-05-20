@@ -33,6 +33,7 @@
 		8F41B8482837A3C10087F97E /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41B8472837A3C10087F97E /* NetworkProtocol.swift */; };
 		8F41B84A2837A4080087F97E /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41B8492837A4080087F97E /* ServiceProtocol.swift */; };
 		8FBD53BB28380BCC0016F307 /* FlickrFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53BA28380BCC0016F307 /* FlickrFetcherTests.swift */; };
+		8FBD53C328380EAC0016F307 /* UICollectionView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */; };
 		A47CDA109F5B82F65115D038 /* Pods_FlickrFetcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C46C1E0C6B0360126BEAB6 /* Pods_FlickrFetcherTests.framework */; };
 		FB6F92F848FF97D6D9782527 /* Pods_FlickrFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76460B335C539EEA4CC4F9C /* Pods_FlickrFetcher.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		8F41B8492837A4080087F97E /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		8FBD53B828380BCB0016F307 /* FlickrFetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrFetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBD53BA28380BCC0016F307 /* FlickrFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFetcherTests.swift; sourceTree = "<group>"; };
+		8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
 		A76460B335C539EEA4CC4F9C /* Pods_FlickrFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				8F0EFDE52837E15E00CBE23A /* UIStoryboard+Instantiate.swift */,
+				8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				8F41B80D2837A1D00087F97E /* Frameworks */,
 				8F41B80E2837A1D00087F97E /* Resources */,
 				B38306C08C00D092C21BCA82 /* [CP] Embed Pods Frameworks */,
+				8FBD53C128380DEF0016F307 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -437,6 +441,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8FBD53C128380DEF0016F307 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		A6E98BF72D2E536A2A31232E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +509,7 @@
 				8F0EFDE02837C90B00CBE23A /* HomeWebRepository.swift in Sources */,
 				8F41B8182837A1D00087F97E /* HomeVC.swift in Sources */,
 				8F0EFDDD2837C88D00CBE23A /* HomeInteractor.swift in Sources */,
+				8FBD53C328380EAC0016F307 /* UICollectionView+Reuse.swift in Sources */,
 				8F0EFDED2837EA3C00CBE23A /* ImageCell.swift in Sources */,
 				8F41B8482837A3C10087F97E /* NetworkProtocol.swift in Sources */,
 				8F0EFDD32837C11600CBE23A /* PhotoModel.swift in Sources */,
