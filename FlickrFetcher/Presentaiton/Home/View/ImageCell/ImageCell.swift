@@ -60,7 +60,7 @@ class ImageCell: UICollectionViewCell {
         let toView = flipped ? imageView : infoView
         let flipDirection: UIView.AnimationOptions = flipped ? .transitionFlipFromRight : .transitionFlipFromLeft
         let options: UIView.AnimationOptions = [flipDirection, .showHideTransitionViews]
-        UIView.transition(from: fromView!, to: toView!, duration: 0.5, options: options) { _ in
+        UIView.transition(from: fromView!, to: toView!, duration: 0.3, options: options) { _ in
             self.flipped.toggle()
         }
     }
