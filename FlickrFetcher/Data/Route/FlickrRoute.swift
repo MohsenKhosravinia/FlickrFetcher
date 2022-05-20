@@ -18,7 +18,6 @@ struct FlickrRoute: Routable {
          "api_key": APIKey.flickr,
          "format": "json",
          "nojsoncallback": 1,
-         "extras": "views",
          "page": page]
     }
     
