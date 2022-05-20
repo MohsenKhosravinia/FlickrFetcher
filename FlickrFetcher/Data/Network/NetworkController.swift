@@ -21,10 +21,6 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
-            .eraseToAnyPublisher()
-//            .retry(2)
-//            .mapError { _ in APIError.responseFailure }
-//            .eraseToAnyPublisher()
         return anyPublisher
     }
     
@@ -38,9 +34,6 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
-//            .retry(2)
-//            .mapError { _ in APIError.responseFailure }
-//            .eraseToAnyPublisher()
         dump(route.body)
         return anyPublisher
     }
@@ -55,9 +48,6 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
-//            .retry(2)
-//            .mapError { _ in APIError.responseFailure }
-//            .eraseToAnyPublisher()
         dump(route.body)
         return anyPublisher
 
@@ -71,9 +61,6 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
-//            .retry(2)
-//            .mapError { _ in APIError.responseFailure }
-//            .eraseToAnyPublisher()
         return anyPublisher
     }
     

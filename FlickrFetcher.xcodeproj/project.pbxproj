@@ -130,31 +130,31 @@
 		8F0EFDC72837B7EB00CBE23A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				8F0EFDDE2837C8FD00CBE23A /* Repository */,
-				8F0EFDCD2837BF3500CBE23A /* Entity */,
-				8F0EFDC82837B80200CBE23A /* Route */,
+				8F0EFDDE2837C8FD00CBE23A /* Repositories */,
+				8F0EFDCD2837BF3500CBE23A /* Entities */,
+				8F0EFDC82837B80200CBE23A /* Routes */,
 				8F41B8432837A2AE0087F97E /* Network */,
 				8F0EFDE22837DB2F00CBE23A /* APIKey.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		8F0EFDC82837B80200CBE23A /* Route */ = {
+		8F0EFDC82837B80200CBE23A /* Routes */ = {
 			isa = PBXGroup;
 			children = (
 				8F0EFDC92837B81200CBE23A /* FlickrRoute.swift */,
 			);
-			path = Route;
+			path = Routes;
 			sourceTree = "<group>";
 		};
-		8F0EFDCD2837BF3500CBE23A /* Entity */ = {
+		8F0EFDCD2837BF3500CBE23A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				8F0EFDCE2837BF5100CBE23A /* FlickrModel.swift */,
 				8F0EFDD02837C10D00CBE23A /* PageModel.swift */,
 				8F0EFDD22837C11600CBE23A /* PhotoModel.swift */,
 			);
-			path = Entity;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		8F0EFDD42837C18500CBE23A /* Presentaiton */ = {
@@ -170,19 +170,19 @@
 			isa = PBXGroup;
 			children = (
 				8F0EFDD72837C1AD00CBE23A /* ViewModel */,
-				8F0EFDD62837C1A800CBE23A /* View */,
+				8F0EFDD62837C1A800CBE23A /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		8F0EFDD62837C1A800CBE23A /* View */ = {
+		8F0EFDD62837C1A800CBE23A /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				8F0EFDEA2837EA2100CBE23A /* ImageCell */,
 				8F41B8172837A1D00087F97E /* HomeVC.swift */,
 				8F41B8192837A1D00087F97E /* Home.storyboard */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8F0EFDD72837C1AD00CBE23A /* ViewModel */ = {
@@ -196,25 +196,25 @@
 		8F0EFDDA2837C87600CBE23A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8F0EFDDB2837C87D00CBE23A /* Interactor */,
+				8F0EFDDB2837C87D00CBE23A /* Interactors */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		8F0EFDDB2837C87D00CBE23A /* Interactor */ = {
+		8F0EFDDB2837C87D00CBE23A /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
 				8F0EFDDC2837C88D00CBE23A /* HomeInteractor.swift */,
 			);
-			path = Interactor;
+			path = Interactors;
 			sourceTree = "<group>";
 		};
-		8F0EFDDE2837C8FD00CBE23A /* Repository */ = {
+		8F0EFDDE2837C8FD00CBE23A /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				8F0EFDE12837C90F00CBE23A /* Web */,
 			);
-			path = Repository;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		8F0EFDE12837C90F00CBE23A /* Web */ = {
@@ -225,13 +225,13 @@
 			path = Web;
 			sourceTree = "<group>";
 		};
-		8F0EFDE42837E14700CBE23A /* Extension */ = {
+		8F0EFDE42837E14700CBE23A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8F0EFDE52837E15E00CBE23A /* UIStoryboard+Instantiate.swift */,
 				8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8F0EFDE72837E2DE00CBE23A /* Application */ = {
@@ -279,9 +279,9 @@
 				8F0EFDE72837E2DE00CBE23A /* Application */,
 				8F0EFDC72837B7EB00CBE23A /* Data */,
 				8F0EFDDA2837C87600CBE23A /* Domain */,
-				8F0EFDE42837E14700CBE23A /* Extension */,
+				8F0EFDE42837E14700CBE23A /* Extensions */,
 				8F0EFDD42837C18500CBE23A /* Presentaiton */,
-				8F58E77C2838001E00D21701 /* Resource */,
+				8F58E77C2838001E00D21701 /* Resources */,
 			);
 			path = FlickrFetcher;
 			sourceTree = "<group>";
@@ -300,21 +300,29 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		8F58E77C2838001E00D21701 /* Resource */ = {
+		8F58E77C2838001E00D21701 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				8F41B8212837A1D30087F97E /* Info.plist */,
 				8F41B81C2837A1D30087F97E /* Assets.xcassets */,
 			);
-			path = Resource;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8FBD53B928380BCC0016F307 /* FlickrFetcherTests */ = {
 			isa = PBXGroup;
 			children = (
+				8FBD53C4283812770016F307 /* Cases */,
 				8FBD53BA28380BCC0016F307 /* FlickrFetcherTests.swift */,
 			);
 			path = FlickrFetcherTests;
+			sourceTree = "<group>";
+		};
+		8FBD53C4283812770016F307 /* Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
