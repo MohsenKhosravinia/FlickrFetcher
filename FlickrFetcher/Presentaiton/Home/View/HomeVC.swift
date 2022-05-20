@@ -15,7 +15,6 @@ class HomeVC: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     private var viewModel: HomeViewModel?
     private var data: PageModel<PhotoModel>?
-    private let cellID = "cellID"
     
     private var collectionViewLayout: UICollectionViewLayout = {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
@@ -53,7 +52,7 @@ class HomeVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = collectionViewLayout
-        collectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: cellID)
+        collectionView.register(ImageCell.self)
     }
     
     private func setupBindigs() {
