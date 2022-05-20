@@ -1,6 +1,6 @@
 //
 //  PhotoModel.swift
-//  FlickerFetcher
+//  FlickrFetcher
 //
 //  Created by Mohsen Khosravinia on 5/20/22.
 //

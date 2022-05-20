@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_FlickerFetcherVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_FlickerFetcherVersionString[];
+FOUNDATION_EXPORT double Pods_FlickrFetcherTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_FlickrFetcherTestsVersionString[];
 
