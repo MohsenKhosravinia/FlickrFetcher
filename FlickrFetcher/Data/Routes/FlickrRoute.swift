@@ -14,7 +14,8 @@ struct FlickrRoute: Routable {
     var path: String = "services/rest/"
     
     var parameters: [String: Any]? {
-        ["method": "flickr.photos.getRecent",
+        ["method": "flickr.photos.search",
+         "text": "baseball",
          "api_key": APIKey.flickr,
          "format": "json",
          "nojsoncallback": 1,
