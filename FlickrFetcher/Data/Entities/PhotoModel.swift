@@ -39,3 +39,9 @@ struct PhotoModel: Codable {
         case isFamily = "isfamily"
     }
 }
+
+extension PhotoModel: Equatable {
+    static func == (lhs: PhotoModel, rhs: PhotoModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}

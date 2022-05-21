@@ -64,10 +64,17 @@ class HomeVC: UIViewController {
         
         viewModel?.errorPublisher
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { message in
-                // TODO: SHOW ALERT
+            .sink(receiveValue: { [weak self] message in
+                self?.presentAlert(message: message)
             })
             .store(in: &cancellables)
+    }
+    
+    private func presentAlert(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(action)
+        present(alertController, animated: true)
     }
 }
 

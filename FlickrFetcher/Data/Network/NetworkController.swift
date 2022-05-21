@@ -11,7 +11,7 @@ import Alamofire
 
 final class NetworkController: NetworkControllerProtocol {
 
-    func get<T>(type: T.Type, route: Routable) -> AnyPublisher<T, AFError> where T: Decodable {
+    func get<T>(type: T.Type, route: Routable) -> AnyPublisher<T, APIError> where T: Decodable {
         guard let url = route.url else { preconditionFailure() }
         
         let anyPublisher = AF.request(url,
@@ -21,10 +21,12 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
+            .mapError { _ in APIError.responseFailure }
+            .eraseToAnyPublisher()
         return anyPublisher
     }
     
-    func post<T>(type: T.Type, route: Routable) -> AnyPublisher<T, AFError> where T: Decodable {
+    func post<T>(type: T.Type, route: Routable) -> AnyPublisher<T, APIError> where T: Decodable {
         guard let url = route.url else { preconditionFailure() }
 
         let anyPublisher = AF.request(url,
@@ -34,11 +36,13 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
+            .mapError { _ in APIError.responseFailure }
+            .eraseToAnyPublisher()
         dump(route.body)
         return anyPublisher
     }
     
-    func put<T>(type: T.Type, route: Routable) -> AnyPublisher<T, AFError> where T: Decodable {
+    func put<T>(type: T.Type, route: Routable) -> AnyPublisher<T, APIError> where T: Decodable {
         guard let url = route.url else { preconditionFailure() }
 
         let anyPublisher = AF.request(url,
@@ -48,12 +52,14 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
+            .mapError { _ in APIError.responseFailure }
+            .eraseToAnyPublisher()
         dump(route.body)
         return anyPublisher
 
     }
     
-    func delete<T>(type: T.Type, route: Routable) -> AnyPublisher<T, AFError> where T: Decodable {
+    func delete<T>(type: T.Type, route: Routable) -> AnyPublisher<T, APIError> where T: Decodable {
         guard let url = route.url else { preconditionFailure() }
 
         let anyPublisher = AF.request(url,
@@ -61,6 +67,8 @@ final class NetworkController: NetworkControllerProtocol {
                                       headers: HTTPHeaders(route.headers))
             .publishDecodable(type: T.self)
             .value()
+            .mapError { _ in APIError.responseFailure }
+            .eraseToAnyPublisher()
         return anyPublisher
     }
     

@@ -34,6 +34,8 @@
 		8F41B84A2837A4080087F97E /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41B8492837A4080087F97E /* ServiceProtocol.swift */; };
 		8FBD53BB28380BCC0016F307 /* HomeVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */; };
 		8FBD53C328380EAC0016F307 /* UICollectionView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */; };
+		8FBD53C62838F00C0016F307 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53C52838F00C0016F307 /* HomeViewModelTests.swift */; };
+		8FBD53C828390C130016F307 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53C728390C130016F307 /* HomeInteractorTests.swift */; };
 		A47CDA109F5B82F65115D038 /* Pods_FlickrFetcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C46C1E0C6B0360126BEAB6 /* Pods_FlickrFetcherTests.framework */; };
 		FB6F92F848FF97D6D9782527 /* Pods_FlickrFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76460B335C539EEA4CC4F9C /* Pods_FlickrFetcher.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +86,8 @@
 		8FBD53B828380BCB0016F307 /* FlickrFetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrFetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTests.swift; sourceTree = "<group>"; };
 		8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
+		8FBD53C52838F00C0016F307 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		8FBD53C728390C130016F307 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		A76460B335C539EEA4CC4F9C /* Pods_FlickrFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -313,7 +317,6 @@
 			isa = PBXGroup;
 			children = (
 				8FBD53C4283812770016F307 /* Cases */,
-				8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */,
 			);
 			path = FlickrFetcherTests;
 			sourceTree = "<group>";
@@ -321,6 +324,9 @@
 		8FBD53C4283812770016F307 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */,
+				8FBD53C52838F00C0016F307 /* HomeViewModelTests.swift */,
+				8FBD53C728390C130016F307 /* HomeInteractorTests.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -541,7 +547,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FBD53C828390C130016F307 /* HomeInteractorTests.swift in Sources */,
 				8FBD53BB28380BCC0016F307 /* HomeVCTests.swift in Sources */,
+				8FBD53C62838F00C0016F307 /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

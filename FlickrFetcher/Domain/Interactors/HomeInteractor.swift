@@ -26,9 +26,8 @@ final class DefaultHomeInteractor: HomeInteractor {
             .receive(on: DispatchQueue.main)
             .sink { result in
                 switch result {
-                case .failure:
-                    // TODO: Handle alamofire errors and parse to APIError
-                    return completion(.failure(APIError.responseFailure))
+                case .failure(let error):
+                    return completion(.failure(error))
                 case .finished:
                     print("Finished")
                 }

@@ -10,7 +10,7 @@ import Combine
 import Alamofire
 
 protocol HomeWebRepository: ServiceProtocol {
-    func fetchPhotos(of page: Int) -> AnyPublisher<FlickrModel, AFError>
+    func fetchPhotos(of page: Int) -> AnyPublisher<FlickrModel, APIError>
 }
 
 final class DefaultHomeWebRepository: HomeWebRepository {
@@ -20,7 +20,7 @@ final class DefaultHomeWebRepository: HomeWebRepository {
         self.networkController = networkController
     }
     
-    func fetchPhotos(of page: Int) -> AnyPublisher<FlickrModel, AFError> {
+    func fetchPhotos(of page: Int) -> AnyPublisher<FlickrModel, APIError> {
         networkController.get(type: FlickrModel.self,
                               route: FlickrRoute(page: page))
     }

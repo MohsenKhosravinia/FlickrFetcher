@@ -45,6 +45,16 @@ class ImageCell: UICollectionViewCell {
         titleLabel.text = (photo.title == "") ? "No title..." : photo.title
     }
     
+    public func flip() {
+        let fromView = flipped ? infoView : imageView
+        let toView = flipped ? imageView : infoView
+        let flipDirection: UIView.AnimationOptions = flipped ? .transitionFlipFromRight : .transitionFlipFromLeft
+        let options: UIView.AnimationOptions = [flipDirection, .showHideTransitionViews]
+        UIView.transition(from: fromView!, to: toView!, duration: 0.3, options: options) { _ in
+            self.flipped.toggle()
+        }
+    }
+    
     private func setupViews() {
         layer.cornerRadius = 10
         clipsToBounds = true
@@ -53,15 +63,5 @@ class ImageCell: UICollectionViewCell {
         infoView.clipsToBounds = true
         
         imageView.contentMode = .scaleAspectFill
-    }
-    
-    func flip() {
-        let fromView = flipped ? infoView : imageView
-        let toView = flipped ? imageView : infoView
-        let flipDirection: UIView.AnimationOptions = flipped ? .transitionFlipFromRight : .transitionFlipFromLeft
-        let options: UIView.AnimationOptions = [flipDirection, .showHideTransitionViews]
-        UIView.transition(from: fromView!, to: toView!, duration: 0.3, options: options) { _ in
-            self.flipped.toggle()
-        }
     }
 }
