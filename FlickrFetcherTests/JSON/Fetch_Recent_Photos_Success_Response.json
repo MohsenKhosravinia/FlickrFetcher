@@ -1,0 +1,66 @@
+{
+    "stat": "ok",
+    "photos": {
+        "page": 1,
+        "pages": 10,
+        "perpage": 100,
+        "total": 1000,
+        "photo": [
+            {
+                "id": "1",
+                "owner": "97102756@N07",
+                "secret": "5b5b375c14",
+                "server": "65535",
+                "farm": 66,
+                "title": "N-2022-05-22-0020_f",
+                "ispublic": 1,
+                "isfriend": 0,
+                "isfamily": 0
+            },
+            {
+                "id": "2",
+                "owner": "194657398@N03",
+                "secret": "50aeeef3f5",
+                "server": "65535",
+                "farm": 66,
+                "title": "",
+                "ispublic": 1,
+                "isfriend": 0,
+                "isfamily": 0
+            },
+            {
+                "id": "3",
+                "owner": "153832479@N03",
+                "secret": "87a1cf0184",
+                "server": "65535",
+                "farm": 66,
+                "title": "Someone somewwhere in sg",
+                "ispublic": 1,
+                "isfriend": 0,
+                "isfamily": 0
+            },
+            {
+                "id": "4",
+                "owner": "65309933@N02",
+                "secret": "d34f6517f8",
+                "server": "65535",
+                "farm": 66,
+                "title": "2022 Germany // Unser Garten - Our garden // im Mai",
+                "ispublic": 1,
+                "isfriend": 0,
+                "isfamily": 0
+            },
+            {
+                "id": "5",
+                "owner": "191846532@N03",
+                "secret": "e3f0b19044",
+                "server": "65535",
+                "farm": 66,
+                "title": "Nature",
+                "ispublic": 1,
+                "isfriend": 0,
+                "isfamily": 0
+            }
+        ]
+    }
+}
