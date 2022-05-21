@@ -8,5 +8,5 @@
 import Foundation
 
 enum APIKey {
-    static let flickr = "5bac1e23c74f5497e4dff908fa711593"
+    static let flickr = "a3eb1e28189f43cfef9a96c375b01425"
 }

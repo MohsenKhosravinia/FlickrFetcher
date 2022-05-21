@@ -9,16 +9,18 @@ import Foundation
 import Combine
 
 protocol HomeViewModel {
-    var photoPublisher: PassthroughSubject<PageModel<PhotoModel>, Never> { get }
+    var reloadPublisher: PassthroughSubject<Void, Never> { get }
     var errorPublisher: PassthroughSubject<String, Never> { get }
+    var data: PageModel<PhotoModel>? { get }
     
     func fetchPhotos(ofPage page: Int)
 }
 
 final class DefaultHomeViewModel: HomeViewModel {
     
-    public var photoPublisher = PassthroughSubject<PageModel<PhotoModel>, Never>()
+    public var reloadPublisher = PassthroughSubject<Void, Never>()
     public var errorPublisher = PassthroughSubject<String, Never>()
+    public var data: PageModel<PhotoModel>?
     private let interactor: HomeInteractor
     
     init(interactor: HomeInteractor) {
@@ -31,8 +33,17 @@ final class DefaultHomeViewModel: HomeViewModel {
             
             switch result {
             case .success(let model):
-                guard let photos = model.photos else { return }
-                self.photoPublisher.send(photos)
+                guard let photos = model.photos,
+                      let page = model.photos?.page else { return }
+                
+                if page == 1 {
+                    self.data = photos
+                } else {
+                    self.data?.items?.append(contentsOf: photos.items ?? [])
+                }
+                
+                self.reloadPublisher.send()
+                
             case .failure(let error):
                 switch error {
                 case .responseFailure:

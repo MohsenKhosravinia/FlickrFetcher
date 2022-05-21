@@ -42,7 +42,7 @@ class ImageCell: UICollectionViewCell {
           .fade(duration: 0.25)
           .set(to: imageView)
         
-        titleLabel.text = photo.title
+        titleLabel.text = (photo.title == "") ? "No title..." : photo.title
     }
     
     private func setupViews() {

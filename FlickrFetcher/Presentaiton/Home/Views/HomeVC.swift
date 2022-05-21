@@ -13,8 +13,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var cancellables = Set<AnyCancellable>()
-    private var viewModel: HomeViewModel?
-    private var data: PageModel<PhotoModel>?
+    var viewModel: HomeViewModel?
     
     private var collectionViewLayout: UICollectionViewLayout = {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
@@ -56,19 +55,17 @@ class HomeVC: UIViewController {
     }
     
     private func setupBindigs() {
-        viewModel?.photoPublisher
+        viewModel?.reloadPublisher
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] model in
-                guard let self = self,
-                      let page = model.page else { return }
-                
-                if page == 1 {
-                    self.data = model
-                } else {
-                    self.data?.items?.append(contentsOf: model.items ?? [])
-                }
-                
-                self.collectionView.reloadData()
+            .sink(receiveValue: { [weak self] in
+                self?.collectionView.reloadData()
+            })
+            .store(in: &cancellables)
+        
+        viewModel?.errorPublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: { message in
+                // TODO: SHOW ALERT
             })
             .store(in: &cancellables)
     }
@@ -79,13 +76,13 @@ class HomeVC: UIViewController {
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        data?.items?.count ?? .zero
+        viewModel?.data?.items?.count ?? .zero
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(ImageCell.self, indexPath: indexPath)
-        cell.fill(photo: data?.items?[indexPath.item] ?? .init())
+        cell.fill(photo: viewModel?.data?.items?[indexPath.item] ?? .init())
         return cell
     }
     
@@ -97,13 +94,12 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
-        if let items = data?.items,
+        if let items = viewModel?.data?.items,
            indexPath.row == items.count - 1,
-           let pages = data?.pages,
-           let page = data?.page,
+           let pages = viewModel?.data?.pages,
+           let page = viewModel?.data?.page,
            page < pages {
             viewModel?.fetchPhotos(ofPage: page + 1)
         }
-
     }
 }

@@ -32,7 +32,7 @@
 		8F41B8202837A1D30087F97E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F41B81E2837A1D30087F97E /* LaunchScreen.storyboard */; };
 		8F41B8482837A3C10087F97E /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41B8472837A3C10087F97E /* NetworkProtocol.swift */; };
 		8F41B84A2837A4080087F97E /* ServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F41B8492837A4080087F97E /* ServiceProtocol.swift */; };
-		8FBD53BB28380BCC0016F307 /* FlickrFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53BA28380BCC0016F307 /* FlickrFetcherTests.swift */; };
+		8FBD53BB28380BCC0016F307 /* HomeVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */; };
 		8FBD53C328380EAC0016F307 /* UICollectionView+Reuse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */; };
 		A47CDA109F5B82F65115D038 /* Pods_FlickrFetcherTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C46C1E0C6B0360126BEAB6 /* Pods_FlickrFetcherTests.framework */; };
 		FB6F92F848FF97D6D9782527 /* Pods_FlickrFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76460B335C539EEA4CC4F9C /* Pods_FlickrFetcher.framework */; };
@@ -82,7 +82,7 @@
 		8F41B8472837A3C10087F97E /* NetworkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
 		8F41B8492837A4080087F97E /* ServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProtocol.swift; sourceTree = "<group>"; };
 		8FBD53B828380BCB0016F307 /* FlickrFetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrFetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FBD53BA28380BCC0016F307 /* FlickrFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrFetcherTests.swift; sourceTree = "<group>"; };
+		8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCTests.swift; sourceTree = "<group>"; };
 		8FBD53C228380EAC0016F307 /* UICollectionView+Reuse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reuse.swift"; sourceTree = "<group>"; };
 		A76460B335C539EEA4CC4F9C /* Pods_FlickrFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -313,7 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				8FBD53C4283812770016F307 /* Cases */,
-				8FBD53BA28380BCC0016F307 /* FlickrFetcherTests.swift */,
+				8FBD53BA28380BCC0016F307 /* HomeVCTests.swift */,
 			);
 			path = FlickrFetcherTests;
 			sourceTree = "<group>";
@@ -541,7 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FBD53BB28380BCC0016F307 /* FlickrFetcherTests.swift in Sources */,
+				8FBD53BB28380BCC0016F307 /* HomeVCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -699,7 +699,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y57FY52VL4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlickrFetcher/Resource/Info.plist;
+				INFOPLIST_FILE = FlickrFetcher/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
@@ -728,7 +728,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y57FY52VL4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FlickrFetcher/Resource/Info.plist;
+				INFOPLIST_FILE = FlickrFetcher/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
