@@ -18,11 +18,6 @@ protocol Routable {
 }
 
 extension Routable {
-    var url: URL? {
-        URL(string: baseURL.rawValue + path)
-    }
-    
-    var body: [String: Any] {
-        [:]
-    }
+    var url: URL? { URL(string: baseURL.rawValue + path) }
+    var body: [String: Any] { [:] }
 }

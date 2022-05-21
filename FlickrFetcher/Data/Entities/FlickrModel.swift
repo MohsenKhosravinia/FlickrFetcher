@@ -39,6 +39,6 @@ extension FlickrModel {
                                          pages: 10,
                                          perPage: 100,
                                          total: 1000)
-        return FlickrModel(photos: page, status: "OK")
+        return FlickrModel(photos: page, status: "ok")
     }
 }
