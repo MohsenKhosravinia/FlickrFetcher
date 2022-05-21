@@ -8,5 +8,5 @@
 import Foundation
 
 enum BaseURL: String {
-    case flicerBaseUrl = "https://api.flickr.com/"
+    case flickrBaseUrl = "https://api.flickr.com/"
 }

@@ -38,7 +38,7 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
-        setupBindigs()
+        setupBindings()
         
         viewModel?.fetchPhotos(ofPage: 1)
     }
@@ -54,7 +54,7 @@ class HomeVC: UIViewController {
         collectionView.register(ImageCell.self)
     }
     
-    private func setupBindigs() {
+    private func setupBindings() {
         viewModel?.reloadPublisher
             .receive(on: DispatchQueue.main)
             .sink(receiveValue: { [weak self] in

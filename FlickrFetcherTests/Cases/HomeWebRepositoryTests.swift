@@ -60,10 +60,10 @@ class HomeWebRepositoryTests: XCTestCase {
 private extension HomeWebRepositoryTests {
     
     final class MockNetworkController: NetworkControllerProtocol {
-        private var isSuccessfullResponse: Bool
+        private var isSuccessfulResponse: Bool
         
-        init(isSuccessfullResponse: Bool = true) {
-            self.isSuccessfullResponse = isSuccessfullResponse
+        init(isSuccessfulResponse: Bool = true) {
+            self.isSuccessfulResponse = isSuccessfulResponse
         }
         
         func get<T>(type: T.Type, route: Routable) -> AnyPublisher<T, APIError> where T : Decodable {
@@ -77,7 +77,7 @@ private extension HomeWebRepositoryTests {
                 httpVersion: nil,
                 headerFields: nil)!
             
-            guard isSuccessfullResponse else {
+            guard isSuccessfulResponse else {
                 let response: AnyPublisher<T, APIError> =
                 Result<T, APIError>
                     .Publisher(.failure(APIError.responseFailure))

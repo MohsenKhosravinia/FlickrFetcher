@@ -10,7 +10,7 @@ import Foundation
 struct FlickrRoute: Routable {
     let page: Int
     var authentication: AuthType = .openAPI
-    var baseURL: BaseURL = .flicerBaseUrl
+    var baseURL: BaseURL = .flickrBaseUrl
     var path: String = "services/rest/"
     
     var parameters: [String: Any]? {

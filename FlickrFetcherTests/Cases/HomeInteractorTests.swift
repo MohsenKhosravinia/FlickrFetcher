@@ -12,7 +12,7 @@ import Alamofire
 
 class HomeInteractorTests: XCTestCase {
 
-    func testFetchRecentPhotos_isSuccessfull() {
+    func testFetchRecentPhotos_isSuccessful() {
         let mockWebRepository = MockSuccessHomeWebRepository()
         let sut = DefaultHomeInteractor(webRepository: mockWebRepository)
         let expectedModel = FlickrModel.mockData

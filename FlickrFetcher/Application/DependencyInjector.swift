@@ -22,5 +22,4 @@ final class DependencyInjector {
         viewController.fill(viewModel: viewModel)
         return viewController
     }()
-    
 }
