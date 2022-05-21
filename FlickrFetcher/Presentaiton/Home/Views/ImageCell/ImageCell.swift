@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class ImageCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -38,9 +38,10 @@ class ImageCell: UICollectionViewCell {
     public func fill(photo: PhotoModel) {
         guard let url = URL(string: photo.imageUrlString) else { return }
         KF.url(url)
-          .placeholder(UIImage(named: "placeholder"))
-          .fade(duration: 0.25)
-          .set(to: imageView)
+            .memoryCacheExpiration(.seconds(10))
+            .placeholder(UIImage(named: "placeholder"))
+            .fade(duration: 0.25)
+            .set(to: imageView)
         
         titleLabel.text = (photo.title == "") ? "No title..." : photo.title
     }
