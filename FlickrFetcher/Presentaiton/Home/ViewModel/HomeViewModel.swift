@@ -34,11 +34,14 @@ final class DefaultHomeViewModel: HomeViewModel {
             switch result {
             case .success(let model):
                 guard let photos = model.photos,
-                      let page = model.photos?.page else { return }
+                      let page = model.photos?.page,
+                      let pages = model.photos?.pages else { return }
                 
                 if page == 1 {
                     self.data = photos
                 } else {
+                    self.data?.page = page
+                    self.data?.pages = pages
                     self.data?.items?.append(contentsOf: photos.items ?? [])
                 }
                 
