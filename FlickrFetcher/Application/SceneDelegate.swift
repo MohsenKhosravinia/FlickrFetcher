@@ -18,6 +18,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = DependencyInjector.shared.homeVC
         window?.makeKeyAndVisible()
-
     }
 }
